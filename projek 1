@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+
+public class MenghitungBangunRuang {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);
+        double vol,phi=3.14,luasSelimut,luasPermukaan;
+        int p,l,t,r,d,Radius; 
+        System.out.println("MENGHITUNG VOLUME RUANG");
+        
+    System.out.println("1.KUBUS");
+    System.out.println("2.BALOK");
+    System.out.println("3.BOLA");
+    System.out.println("4.KERUCUT");
+    System.out.println("5.SILINDER");
+   
+    System.out.println("<========================>");
+    System.out.println("PILIH BANGUN RUANG YG AKAN DI HITUNG :");
+    int pilih = input.nextInt();
+    
+    switch (pilih)
+    {
+        case 1 :
+            System.out.println("Input Sisi Kubus");
+            r = input.nextInt();
+            vol=r*r*r;
+            System.out.println("Volume Kubus Adalah : "+vol);
+            break;
+            
+        case 2 :
+            System.out.println("Input Panjang Balok");
+            p = input.nextInt();
+            System.out.println("Input Tinggi Balok");
+            t = input.nextInt();
+            System.out.println("Input Lebar Balok");
+            l = input.nextInt();
+            System.out.println();
+            vol= p*l*t;
+            System.out.println("Volume Balok Adalah :"+vol);
+            break;
+            
+        case 3 :
+            System.out.println("Input Diameter bola");
+            d = input.nextInt();
+            System.out.println("Input Radius bola");
+            Radius = input.nextInt();
+            r = d/Radius;
+            System.out.println("Jari Jari bola adalah : "+r);
+            break;
+        
+        case 4 :
+            System.out.println("Masukan jari-jari :");
+            r = input.nextInt();
+            System.out.println("Masukan Tinggi :");
+            t = input.nextInt();
+            System.out.println("Masukan luas Selimut :");
+            luasSelimut = input.nextInt();
+            luasSelimut = 2*phi*r*t;
+            luasPermukaan = 2*phi*r*t+2*phi*r*r;
+            vol = 1/3*phi*r*r*t;
+        
+            System.out.println("Luas selimut silinder :"+luasSelimut);
+            System.out.println("Luas permukaan silinder :"+luasPermukaan);
+            System.out.println ("Volume silinder"+vol);
+        break;
+                   
+        case 5 :
+            System.out.println("Masukan jari-jari :");
+            r = input.nextInt();
+            System.out.println("Masukan Tinggi :");
+            t = input.nextInt();
+            luasSelimut=2*phi*r*t;
+            luasPermukaan=luasSelimut+(2*phi*(r*r));
+            vol=phi*(r*r)*t;
+        
+            System.out.println("Luas selimut silinder :"+luasSelimut);
+            System.out.println("Luas permukaan silinder :"+luasPermukaan);
+            System.out.println ("Volume silinder"+vol);       
+        break;
+            
+    }   
+   
+               
+    }
+    
+}
